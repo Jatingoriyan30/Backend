@@ -6,7 +6,7 @@ const App = () => {
 
 
   async function fetchnotes() {
-    let response = await axios.get("http://localhost:3000/api/notes")
+    let response = await axios.get("https://backend-3-20ur.onrender.com/api/notes")
     setnotes(response.data.note)
 
   }
@@ -18,7 +18,7 @@ const App = () => {
     e.preventDefault()
     const { title, description } = e.target.elements
 
-    const response = await axios.post("http://localhost:3000/api/notes", {
+    const response = await axios.post("https://backend-3-20ur.onrender.com/api/notes", {
       title: title.value,
       description: description.value
     })
@@ -29,7 +29,7 @@ const App = () => {
   }
 
   async function handleDelete(id) {
-    await axios.delete("http://localhost:3000/api/notes/" + id)
+    await axios.delete("https://backend-3-20ur.onrender.com/api/notes/" + id)
     fetchnotes()
   }
   return (
